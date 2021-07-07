@@ -9,23 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var about_component_1 = require('./about.component');
-var cars_module_1 = require('./cars/cars.module');
-var file_module_1 = require('./file/file.module');
-var app_routing_1 = require('./app.routing');
-var AppModule = (function () {
-    function AppModule() {
+var ng2_file_upload_1 = require('ng2-file-upload');
+var UploadComponent = (function () {
+    function UploadComponent() {
+        this.uploader = new ng2_file_upload_1.FileUploader({ url: 'http://localhost:3001/upload' });
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, cars_module_1.CarModule, file_module_1.FileModule, app_routing_1.AppRouting],
-            declarations: [app_component_1.AppComponent, about_component_1.AboutComponent],
-            bootstrap: [app_component_1.AppComponent]
+    UploadComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'upload.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], UploadComponent);
+    return UploadComponent;
 }());
-exports.AppModule = AppModule;
+exports.UploadComponent = UploadComponent;

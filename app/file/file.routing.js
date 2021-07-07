@@ -9,23 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var about_component_1 = require('./about.component');
-var cars_module_1 = require('./cars/cars.module');
-var file_module_1 = require('./file/file.module');
-var app_routing_1 = require('./app.routing');
-var AppModule = (function () {
-    function AppModule() {
+var router_1 = require('@angular/router');
+var upload_component_1 = require('./upload.component');
+var download_component_1 = require('./download.component');
+var fileRoutes = [
+    { path: 'file/upload', component: upload_component_1.UploadComponent },
+    { path: 'download', component: download_component_1.DownloadComponent },
+];
+var FileRouting = (function () {
+    function FileRouting() {
     }
-    AppModule = __decorate([
+    FileRouting = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, cars_module_1.CarModule, file_module_1.FileModule, app_routing_1.AppRouting],
-            declarations: [app_component_1.AppComponent, about_component_1.AboutComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [router_1.RouterModule.forChild(fileRoutes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], FileRouting);
+    return FileRouting;
 }());
-exports.AppModule = AppModule;
+exports.FileRouting = FileRouting;

@@ -22,10 +22,14 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-
+      //'angular-file-saver' : 'npm:angular-file-saver/dist/angular-file-saver.bundle.min.js',  
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'file-saver':'npm:file-saver/file-saver.min.js',
+      'ng2-file-upload' : 'npm:ng2-file-upload',
+      //express  
+      'express' : 'npm:express'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -34,6 +38,15 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      /** Configuration for ng2-file-upload */
+      'ng2-file-upload' : { 
+        main: './ng2-file-upload.js',
+        defaultExtension: 'js'
+      },
+      'express' : {
+        main: './index.js',
         defaultExtension: 'js'
       }
     }
